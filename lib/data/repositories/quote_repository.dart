@@ -31,12 +31,12 @@ class QuoteRepository {
     return (response.data as List).map((e) => QuoteModel.fromJson(e)).toList();
   }
 
-  Future<List<QuoteModel>> getTenRandomQuoteByTitle() async {
+  Future<List<QuoteModel>> getTenRandomQuoteByTitle({required String title}) async {
     final response = await apiService.getData(ApiConstants.getTenRandomQuoteByTitlePath);
     return (response.data as List).map((e) => QuoteModel.fromJson(e)).toList();
   }
 
-  Future<List<QuoteModel>> getTenRandomQuoteByCharacter() async {
+  Future<List<QuoteModel>> getTenRandomQuoteByCharacter({required String character}) async {
     final response = await apiService.getData(ApiConstants.getTenRandomQuoteByCharacterPath);
     return (response.data as List).map((e) => QuoteModel.fromJson(e)).toList();
   }
